@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농업기계 현장 안전기술</title>  
+
+    
+    <link rel="icon" href="images/favicon.ico"> <!-- favicon -->
+    <link rel="apple-touch-icon" href="images/favicon.ico" /> <!--for iphone-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" /> <!--for android-->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?ver=25042404">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/createjs.min.js"></script>
+    <script src="js/menus.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/script.js"></script>
+
+    <style>        
+        .video_btn{ 
+            width:95%; height:10%; display: flex; align-items: center; justify-content: center; gap:0.5em;              
+            border-radius: 15px; 
+            border: 2px solid var(--text-color); 
+            color:var(--text-color);           
+            text-decoration: none;
+            padding:0 1em;
+        }
+
+        .video_btn img{height:35%;}
+        #content_html{
+    width: 100%;
+    height: 100%;
+    max-width: calc(100vh * (16 / 9));
+    max-height: calc(100vw * (9 / 16));
+
+    border:15px solid var(--sky-color);
+    border-radius: 10px;   
+    background: linear-gradient(to bottom right, #000, #232c19);             
+    box-shadow:inset 0 0 5px dodgerblue;
+}       
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main_wrap">
+
+            <!-- 메인화면 -->
+            <div class="main_page">
+                <div class="button_wrap">
+                    <button class="main_menu">농업기계 관리요령</button>
+                    <button class="main_menu">농업기계 관리요령</button>
+                </div>
+            </div>
+            <!-- 콘텐츠 화면 -->
+            <div class="content_page">
+                <!-- 헤더 -->
+                <header id="header">
+                    <div class="inner">
+                        <div class="util">
+                            <button id="home_btn" class="util_btn">홈</button>
+                            <select>2차메뉴</select>
+                        </div>
+                        <div class="title">
+                            <span>농업기계 안전이용지침-트랙터</span>
+                        </div>
+                        <button id="map_btn" class="util_btn">MAP</button>                    
+                    </div>
+                </header>
+                <!-- 헤더 끝 -->
+
+                <!-- 콘텐츠 -->
+                <section id="cont_sec">
+                    <div class="inner">
+                        <div id="content">
+                            <div id="animation_container">
+                                <canvas id="canvas"></canvas>
+                                <div id="dom_overlay_container">
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </section>
+                <!-- 콘텐츠 끝 -->
+
+                <!-- 퀵메뉴 -->
+                <aside class="quick_menu close1">
+                    <div id="leftmenu">
+                        <!-- leftmenu show in here -->
+                    </div>
+                    <!-- <button type="button" class="video_btn">
+                        <span>동영상 보기</span>
+                        <img src="images/play-button.png" alt="재생">
+                    </button> -->
+                    <button type="button" class="quick_btn">
+                        <!-- <em>INDEX</em> -->
+                        <span>퀵메뉴 닫기</span>
+                    </button>                
+                </aside>
+                <!-- 퀵메뉴 끝 -->
+
+                <!-- 콘트롤바 -->
+                <div id="control_bar">
+                    <div class="button_wrap">
+                        <button id="index_btn" class="control_btn">목차</button>
+                        <button id="video_btn" class="control_btn">동영상</button>
+                    </div>
+                    <div class="paging_wrap">
+                        <button id="page_up" class="page_btn" disabled>
+                            <i class="fas fa-arrow-left"></i> 이전
+                        </button>
+                        <span class="page_count"></span>
+                        <button id="page_dn" class="page_btn">
+                            다음 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <button id="fullscr_btn" class="control_btn">
+                        <i class="fas fa-expand"></i>
+                        <span>Fullscreen</span>
+                    </button>
+                </div>
+             <!-- 콘트롤바 끝-->
+            </div>
+        </div>       
+    </div> 
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+@charset 'utf-8'; 
+
+/* 구글폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 변수지정 */
+:root{
+    --main-color:#1A3759;
+    --sky-color:#90B3C7;
+    --bluesky-color:#2FB1EA;
+
+    --pink-color:#FF8383;
+    --black-color:#141414;
+    --gray20-color:#333333;
+    --gray45-color:#737373;
+    --gray85-color:#D9D9D9;
+    --gray95-color:#F2F2F2;
+    --text-color:#F2F2F2;
+
+    --full-width:1920px;
+    --inner-width:1200px;
+    --title-fontsize:25px;
+
+    --header-height:530px;
+    --mheader-height:60px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 본문 폰트 지정하기 */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight:normal;
+    font-size:16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color:#141414;
+}/* 폰트 */
+
+/* 여백제거 */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p, button{margin: 0; padding: 0;}
+
+/* normal */
+/* h1,h2,h3,h4,h5,h6,strong {font-weight: normal;} */
+address, em{font-style:normal;}
+
+/* 리스트 블릿 스타일 제거 */
+ul{list-style:none;}
+
+/* 이미지 태그 하단에 생기는 여백 */
+img{vertical-align: middle;}
+
+/* 테두리 제거 */
+img{border: 0;}
+button{border:none; outline:none; background: transparent;}
+
+/* 버튼 핸드커서 */
+button{cursor: pointer;}
+
+/* 링크텍스트 밑줄제거, 링크텍스트 색상 */
+a{text-decoration: none; color:var(--text-color)} /* 색상은 body와 동일하게 지정 */
+
+/* 로딩 스피너 */
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #f3f3f3; /* 회색 테두리 */
+    border-top: 8px solid #3498db; /* 파란색 테두리 (상단만) */
+    border-radius: 50%; /* 원형 */
+    animation: spin 1s linear infinite; /* 1초마다 회전 반복 */
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+ }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    background-color: #000;
+    overflow: hidden;
+    border: 1px solid yellow;
+}
+
+/* 짧은 쪽에 맞춰 자식 요소를 중앙에 배치 16:10 */
+.main_wrap {    
+    width: 100%;
+    height: 100%;
+
+    /* 높이를 기준으로 한 최대 너비 */
+    max-width: calc(100vh * (16 / 10));
+
+    /* 너비를 기준으로 한 최대 높이  */
+    max-height: calc(100vw * (10 / 16));
+    
+    border: 3px solid green;      
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 메인화면 */
+.main_page{
+    position: relative;
+    width:100%;
+    height:100%;
+    background:url('../images/bg_main.jpg') no-repeat center center / cover; 
+}
+
+.main_page .button_wrap{
+    position: absolute;
+    display: flex; align-items: center; flex-direction:column; gap:0.8em;
+    width:45%;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:25%;
+}
+.main_page .main_menu {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, #001f4d, #003366, #004080, #0059b3);
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 2em;    
+    border-radius: 8px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2); /* 입체감 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease-in-out;
+}
+
+.main_menu:hover{transform: translateY(-2px);}
+.main_menu-button:active {transform: translateY(1px);}
+
+/* 콘텐츠 화면 */
+.content_page{
+    position: relative;    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    display: none;
+}
+
+#header{width:100%; height:9%;}
+#header .inner{
+    position: relative; 
+    display: flex;    
+    justify-content: space-between;         
+    align-items: center; 
+    padding:10px; 
+    background: var(--main-color); 
+    border: 2px solid red; 
+    width:100%; 
+    height: 100%;
+}
+
+#header .util select{width:150px;}
+#header .title{flex-grow:1; color:var(--text-color); font-size: 20px; text-align: center; border:1px solid yellow;}
+
+.util_btn {    
+    padding: 8px 12px;
+    font-size: 16px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.util_btn:hover {background: #e9ecef;}
+
+#cont_sec{flex-grow:1; background:url('../images/bg_content.jpg') no-repeat center center / cover ; border: 1px solid pink;}
+#cont_sec h2{font-size: 0; height: 0; overflow: hidden; text-indent:-9999px; position: absolute; left:-9999px;}
+#cont_sec .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;         
+    /* border:10px solid var(--gray95-color);*/
+}
+
+#content{
+    width: 86%;
+    height: 100%;
+    max-width: calc(100vh * (16 / 9));
+    max-height: calc(100vw * (9 / 16));
+
+    border:5px solid var(--sky-color);
+    border-radius: 10px;   
+    background: linear-gradient(to bottom right, #000, #232c19);             
+    box-shadow:inset 0 0 5px dodgerblue;
+    overflow: hidden;
+}
+
+#animation_container{position: relative; margin-left:0; overflow: hidden;}
+#animation_container #canvas{position: absolute; display: block; }
+#animation_container #dom_overlay_container{pointer-events:none; overflow:hidden; position: absolute; display: block; }
+
+/* 퀵메뉴  */
+.quick_menu{
+    position:absolute; 
+    left:0px; top:9%; 
+    z-index:2;
+    width: 200px; 
+    box-sizing: border-box;
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap:20px;
+    text-align: center;
+    padding:20px 0;
+    border-radius:0 20px 20px 0;
+    border:1px solid #2FB1EA;
+    background: rgba(0,0,0,0.7);
+    transition:all 0.3s ease-out;
+}
+
+.quick_menu.close{left:-200px;}
+
+/* 퀵메뉴 닫기 버튼 */
+.quick_menu .quick_btn{
+    position: absolute;
+    width: 30px; height:100px;   
+    left:199px;
+    top:50%; transform:translateY(-50%);
+    padding:10px 0;
+    border:1px solid var(--bluesky-color);
+    border-radius: 0 8px 8px 0;
+    background:rgba(0,0,0,0.7);
+}
+
+/* index 세로쓰기 */
+.quick_menu .quick_btn em{writing-mode:vertical-rl; text-orientation:upright;}
+.quick_menu .quick_btn::before{
+    content:"\f0d9"; 
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font:var(--fa-font-solid);
+    font-size: 20px;    
+    color:var(--gray85-color);
+    transition:all 0.3s ease-out 0.3s;
+    margin-bottom: 10px;
+}
+
+.quick_menu.close .quick_btn::before{
+    transform:rotate(180deg);
+}
+
+.quick_menu .quick_btn span{
+   font-size: 0; height: 0; overflow: hidden; text-indent:-9999px; position: absolute; left:-9999px;
+}
+
+/* leftmenu  */
+#leftmenu >ul li{display: flex; align-items: center;}
+#leftmenu >ul li a{
+    display: flex; align-items: center; justify-content:flex-start; width:100%; height:100%;  
+    padding:15px 5px;
+    color:var(--text-color); line-height: 130%; 
+    text-align:left;
+    text-decoration: none; 
+    white-space: normal;
+    word-break: keep-all;
+}
+
+#leftmenu >ul li.on a{color:var(--bluesky-color); font-weight: bold; }
+#leftmenu >ul li a:hover{color:var(--bluesky-color);}
+#leftmenu >ul li .link-wrap{display: flex;}
+
+/* 콘트롤바 */
+#control_bar{ 
+    position: absolute;  
+    display: flex;
+    gap:0.9em;
+    justify-content: space-between;
+    align-items: center;    
+    bottom: 0;              
+    left: 0;
+    width: 100%;
+    height: 9%;
+    padding:10px;
+    background: rgba(26,55,89, 0.85); 
+    border-top: 2px solid #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 999;
+}
+.control_btn, .page_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* 아이콘과 글자 사이 */
+    padding: 8px 12px;
+    font-size: 16px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.control_btn:hover, .page_btn:hover {
+    background: #e9ecef;
+}
+
+.page_btn[disabled] {
+    background: #f1f1f1;
+    color: #aaa;
+    cursor: not-allowed; /* 마우스 포인터도 비활성 느낌으로 */
+
+    /* opacity: 0.5; 흐릿하게 */
+    /* filter: grayscale(100%); 흑백 처리로 비활성화 시각 효과 */
+}
+
+.paging_wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 이전/다음 버튼 사이 간격 */
+}
+
+/* 아이콘 크기 살짝 조정 */
+.control_btn i, .page_btn i {
+    font-size: 18px;
+}
+
+.page_count{color:var(--text-color);}
+

@@ -1,0 +1,33 @@
+
+/* Map */
+#map{left:0%; height:100%; border:0px solid #ff0000;}
+#map{background:url(../images/bg_map.png) no-repeat; background-size:contain;}
+#map > img{width:100%; opacity: 0;}  
+
+#menu1{left:17.6563%; top:48.5185%; background:url(../images/map7.png) no-repeat; background-size:contain;}   /*공통사항*/
+#menu2{left:17.6563%; top:23.0556%; background:url(../images/map1.png) no-repeat; background-size:contain;}   /*트랙터*/
+#menu3{left:42.0313%; top:23.0556%; background:url(../images/map2.png) no-repeat; background-size:contain;} 
+#menu4{left:66.3021%; top:23.0556%; background:url(../images/map3.png) no-repeat; background-size:contain;}
+#menu5{left:17.6563%; top:35.2778%; background:url(../images/map4.png) no-repeat; background-size:contain;}   
+#menu6{left:42.0313%; top:35.2778%; background:url(../images/map5.png) no-repeat; background-size:contain;}  
+#menu7{left:66.3021%; top:35.2778%; background:url(../images/map6.png) no-repeat; background-size:contain;}
+#menu8{left:17.6563%; top:70.5556%; background:url(../images/map8.png) no-repeat; background-size:contain;}  
+#menu9{left:42.0313%; top:70.5556%; background:url(../images/map9.png) no-repeat; background-size:contain;}
+
+#menu1:hover {background:url(../images/map7_on.png) no-repeat; background-size:contain;} 
+#menu2:hover {background:url(../images/map1_on.png) no-repeat; background-size:contain;} 
+#menu3:hover {background:url(../images/map2_on.png) no-repeat; background-size:contain;} 
+#menu4:hover {background:url(../images/map3_on.png) no-repeat; background-size:contain;} 
+#menu5:hover {background:url(../images/map4_on.png) no-repeat; background-size:contain;} 
+#menu6:hover {background:url(../images/map5_on.png) no-repeat; background-size:contain;} 
+#menu7:hover {background:url(../images/map6_on.png) no-repeat; background-size:contain;} 
+#menu8:hover {background:url(../images/map8_on.png) no-repeat; background-size:contain;} 
+#menu9:hover {background:url(../images/map9_on.png) no-repeat; background-size:contain;} 
+
+.map_btn{display:inline-block; position:absolute; width:24%; height:11.2963%; transition:.4s; margin-bottom:0%; border:0px solid #0000ff;} /*transparent*/ 
+
+
+/* Title */
+#map_title{left:88.2%; top:11%; background:url(../images/map_close.png) no-repeat; background-size:contain; transition:.4s; cursor:pointer;}
+#map_title:hover {background:url(../images/map_close_on.png) no-repeat; background-size:contain;} 
+.close_btn{position:absolute; width:5.5208%; height:9.9074%; transition:.4s; border:0px solid #ff0000;} 
